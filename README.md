@@ -1,2 +1,3 @@
-# order-service
-Side project with order service using Nest js(Typescript)
+# Order-service
+Side project with order service using typescript(nest-js)
+> Backend
