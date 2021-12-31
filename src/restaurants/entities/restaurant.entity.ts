@@ -6,8 +6,8 @@ import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 @ObjectType()
 @Entity()
 export class Restaurant {
-  @PrimaryGeneratedColumn()
   @Field((type) => Number)
+  @PrimaryGeneratedColumn()
   id: number;
 
   @Field((type) => String)
@@ -16,14 +16,24 @@ export class Restaurant {
   @Length(5)
   name: string;
 
-  @Field((type) => Boolean, { nullable: true })
+  @Field((type) => Boolean, { defaultValue: false, nullable: true })
   @Column({ default: false })
   @IsOptional()
   @IsBoolean()
   isVegan: boolean;
 
-  @Field((type) => String, { defaultValue: '인천' })
+  @Field((type) => String)
   @Column()
   @IsString()
   address: string;
+
+  @Field((type) => String)
+  @Column()
+  @IsString()
+  ownerName: string;
+
+  @Field((type) => String)
+  @Column()
+  @IsString()
+  categoryName: string;
 }
