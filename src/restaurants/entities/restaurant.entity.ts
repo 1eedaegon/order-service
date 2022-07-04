@@ -7,18 +7,18 @@ import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 export class Restaurant {
   @PrimaryGeneratedColumn()
   @Field((type) => Number)
-  id: number;
+  id: Number;
 
   @Field((type) => String)
   @IsString()
   @Length(5, 10)
   @Column()
-  name: string;
+  name: String;
 
   @Field((type) => Boolean)
   @IsBoolean()
   @Column()
-  isVegan: boolean;
+  isVegan: Boolean;
 
   @Field((type) => String)
   @IsString()
