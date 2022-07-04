@@ -14,8 +14,14 @@ export class RestaurantResolver {
   }
 
   @Mutation((returns) => Boolean)
-  createRestaurant(@Args() createRestaurantdto: CreateRestaurantDto): Boolean {
-    console.log(createRestaurantdto);
-    return true;
+  async createRestaurant(
+    @Args() createRestaurantdto: CreateRestaurantDto,
+  ): Promise<boolean> {
+    try {
+      await this.restaurantService.createRestaurant(createRestaurantdto);
+      return true;
+    } catch (err) {
+      return false;
+    }
   }
 }
